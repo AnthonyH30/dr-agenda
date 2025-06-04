@@ -1,4 +1,5 @@
-import React from "react";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
 
 import {
   Dialog,
@@ -7,19 +8,35 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { auth } from "@/lib/auth";
 
 import ClinicForm from "./_components/form";
 
-export default function ClinicFormPage() {
+const ClinicFormPage = async () => {
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+  if (!session) {
+    redirect("/login");
+  }
+  if (!session.user.plan) {
+    redirect("/new-subscription");
+  }
   return (
-    <Dialog open>
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle>Adicionar clínica</DialogTitle>
-          <DialogDescription>Adicione uma para continuar.</DialogDescription>
-        </DialogHeader>
-        <ClinicForm />
-      </DialogContent>
-    </Dialog>
+    <div>
+      <Dialog open>
+        <DialogContent className="sm:max-w-[425px]">
+          <DialogHeader>
+            <DialogTitle>Adicionar clínica</DialogTitle>
+            <DialogDescription>
+              Adicione uma clínica para continuar.
+            </DialogDescription>
+          </DialogHeader>
+          <ClinicForm />
+        </DialogContent>
+      </Dialog>
+    </div>
   );
-}
+};
+
+export default ClinicFormPage;
