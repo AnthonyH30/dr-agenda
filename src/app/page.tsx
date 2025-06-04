@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       <Link href={"/authentication"}>
-        <Button>Bootcamp</Button>
+        <Button>Login</Button>
       </Link>
     </div>
   );
