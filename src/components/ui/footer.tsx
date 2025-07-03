@@ -1,67 +1,64 @@
-import { DiscIcon as Discord, Github, Twitter } from "lucide-react";
 import Link from "next/link";
-
-import { Button } from "@/components/ui/button";
 
 export function Footer() {
   return (
-    <footer className="bg-background/95 supports-[backdrop-filter]:bg-background/60 border-t backdrop-blur">
+    <footer className="bg-background/95 supports-[backdrop-filter]:bg-background/60 border-t px-4 backdrop-blur">
       <div className="container py-10">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
           <div>
-            <h3 className="mb-4 text-lg font-semibold">About</h3>
+            <h3 className="mb-4 text-lg font-semibold">Sobre</h3>
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/about"
+                  href=""
                   className="text-muted-foreground hover:text-foreground text-sm"
                 >
-                  About Us
+                  Sobre Nós
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/team"
+                  href=""
                   className="text-muted-foreground hover:text-foreground text-sm"
                 >
-                  Team
+                  Nossa Equipe
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/careers"
+                  href=""
                   className="text-muted-foreground hover:text-foreground text-sm"
                 >
-                  Careers
+                  Carreiras
                 </Link>
               </li>
             </ul>
           </div>
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Resources</h3>
+            <h3 className="mb-4 text-lg font-semibold">Recursos</h3>
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/docs"
+                  href=""
                   className="text-muted-foreground hover:text-foreground text-sm"
                 >
-                  Documentation
+                  Central de Ajuda
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/blog"
+                  href=""
+                  className="text-muted-foreground hover:text-foreground text-sm"
+                >
+                  Tutoriais
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href=""
                   className="text-muted-foreground hover:text-foreground text-sm"
                 >
                   Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/support"
-                  className="text-muted-foreground hover:text-foreground text-sm"
-                >
-                  Support
                 </Link>
               </li>
             </ul>
@@ -71,41 +68,59 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/privacy"
+                  href=""
                   className="text-muted-foreground hover:text-foreground text-sm"
                 >
-                  Privacy Policy
+                  Termos de Uso
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/terms"
+                  href=""
                   className="text-muted-foreground hover:text-foreground text-sm"
                 >
-                  Terms of Service
+                  Privacidade
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href=""
+                  className="text-muted-foreground hover:text-foreground text-sm"
+                >
+                  Cookies
                 </Link>
               </li>
             </ul>
           </div>
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Connect</h3>
-            <div className="flex space-x-4">
-              <Button variant="ghost" size="icon">
-                <Twitter className="h-4 w-4" />
-              </Button>
-              <Button variant="ghost" size="icon">
-                <Discord className="h-4 w-4" />
-              </Button>
-              <Button variant="ghost" size="icon">
-                <Github className="h-4 w-4" />
-              </Button>
-            </div>
+            <h3 className="mb-4 text-lg font-semibold">Contato</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href=""
+                  className="text-muted-foreground hover:text-foreground text-sm"
+                >
+                  Suporte
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href=""
+                  className="text-muted-foreground hover:text-foreground text-sm"
+                >
+                  Vendas
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href=""
+                  className="text-muted-foreground hover:text-foreground text-sm"
+                >
+                  Parcerias
+                </Link>
+              </li>
+            </ul>
           </div>
-        </div>
-        <div className="mt-10 border-t pt-8 text-center">
-          <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} PromptMarket. All rights reserved.
-          </p>
         </div>
       </div>
     </footer>

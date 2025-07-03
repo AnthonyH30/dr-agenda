@@ -2,60 +2,52 @@ import { PricingCard } from "./pricing-card";
 
 const plans = [
   {
-    name: "Starter",
-    price: 15,
-    period: "month",
+    name: "Gratuito",
+    price: 0,
+    period: "mês",
     features: [
-      "Up to 10,000 data points per month",
-      "Email support",
-      "Community forum access",
-      "Cancel anytime",
+      "Até 50 agendamentos por mês",
+      "Confirmações por WhatsApp",
+      "Agenda online básica",
+      "Cadastro de pacientes",
+      "Suporte por email",
     ],
+    CTAButtonText: "Teste grátis",
   },
   {
-    name: "Pro",
-    price: 40,
-    period: "quarter",
+    name: "Essential",
+    price: 59,
+    period: "mês",
     featured: true,
     features: [
-      "Advanced analytics dashboard",
-      "Customizable reports and charts",
-      "Real-time data tracking",
-      "Integration with third-party tools",
-      "Everything in Hobby Plan",
+      "Agendamentos ilimitados",
+      "Sistema de lembretes automáticos",
+      "Histórico completo de pacientes",
+      "Relatórios e análises avançadas",
+      "Integração com WhatsApp Business",
+      "Suporte prioritário 24/7",
+      "Personalização da agenda",
+      "Multi-usuários",
     ],
-  },
-  {
-    name: "Premium",
-    price: 120,
-    period: "year",
-    features: [
-      "Unlimited data storage",
-      "Customizable dashboards",
-      "Advanced data segmentation",
-      "Real-time data processing",
-      "AI-powered insights and recommendations",
-      "Everything in Hobby Plan",
-      "Everything in Pro Plan",
-    ],
+    CTAButtonText: "Assinar essential",
   },
 ];
 
 export default function Pricing() {
   return (
-    <div className="min-h-screen bg-black px-4 py-20 text-white">
+    <div id="planos" className="min-h-screen bg-black px-4 py-20 text-white">
       <div className="mx-auto max-w-6xl space-y-12">
         <div className="space-y-4 text-center">
-          <h1 className="text-4xl font-bold">
-            Simple pricing for advanced people
-          </h1>
-          <p className="mx-auto max-w-2xl text-gray-400">
-            Our pricing is designed for advanced people who need more features
-            and more flexibility.
+          <h2 className="text-4xl font-bold">
+            Escolha o plano ideal para sua clínica
+          </h2>
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+            Comece gratuitamente e atualize quando precisar. Sem compromisso,
+            cancele a qualquer momento.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="mx-auto grid max-w-[900px] gap-8 md:grid-cols-2">
           {plans.map((plan) => (
             <PricingCard key={plan.name} {...plan} />
           ))}
